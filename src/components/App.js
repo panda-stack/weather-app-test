@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import SearchCity from './SearchCity';
 import Result from './Result';
 import device from '../responsive/Device';
+import NotFound from './NotFound';
 
 const AppTitle = styled.h1`
   display: block;
@@ -157,6 +158,7 @@ class App extends React.Component {
             submit={this.handleSearchCity}
           />
           {weatherInfo && <Result weather={weatherInfo} />}
+          {error && <NotFound error={error} />}
         </WeatherWrapper>
       </>
     );
