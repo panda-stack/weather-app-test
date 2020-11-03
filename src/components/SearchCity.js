@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import device from '../responsive/Device';
 
 const SearchBar = styled.form`
   top: ${({ showResult }) => (showResult ? '0%' : '30%')};
@@ -10,6 +11,12 @@ const SearchBar = styled.form`
   margin: 0 auto;
   max-width: 500px;
   transition: 0.8s 0.5s;
+  @media ${device.laptopL} {
+    max-width: 600px;
+  }
+  @media ${device.desktop} {
+    max-width: 700px;
+  }
 `;
 
 const SearchInput = styled.input`
@@ -27,6 +34,13 @@ const SearchInput = styled.input`
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     outline: none;
   }
+  @media ${device.tablet} {
+    font-size: 18px;
+  }
+  @media ${device.laptop} {
+    padding: 15px 20px 15px 45px;
+    border-radius: 30px;
+  }
 `;
 
 const SearchIcon = styled.span`
@@ -39,6 +53,16 @@ const SearchIcon = styled.span`
   width: 14px;
   font-size: 14px;
   color: #c5c5c5;
+  @media ${device.tablet} {
+    height: 15px;
+    width: 15px;
+    font-size: 15px;
+  }
+  @media ${device.laptop} {
+    height: 16px;
+    width: 16px;
+    font-size: 16px;
+  }
 `;
 
 const SearchCity = ({ submit, value, change, showResult }) => {

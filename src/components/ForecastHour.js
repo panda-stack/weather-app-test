@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import SmallLabel from './SmallLabel';
 import Text from './Text';
+import device from '../responsive/Device';
 
 const ForecastWrapper = styled.div`
   flex-shrink: 0;
@@ -16,6 +17,15 @@ const ForecastWrapper = styled.div`
   }
   &:last-child {
     margin-right: 0;
+  }
+  @media ${device.tablet} {
+    flex-basis: 110px;
+  }
+  @media ${device.laptop} {
+    flex-basis: 125px;
+  }
+  @media ${device.laptopL} {
+    flex-basis: 140px;
   }
 `;
 

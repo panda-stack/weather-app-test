@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SearchCity from './SearchCity';
 import Result from './Result';
+import device from '../responsive/Device';
 
 const AppTitle = styled.h1`
   display: block;
@@ -26,6 +27,18 @@ const AppTitle = styled.h1`
     top: 20%;
     text-align: center;
     transition: .5s;
+    @media ${device.tablet} {
+      font-size: 40px;
+    }
+    @media ${device.laptop} {
+      font-size: 50px;
+    }
+    @media ${device.laptopL} {
+      font-size: 60px;
+    }
+    @media ${device.desktop} {
+      font-size: 70px;
+    }
 
   `}
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import device from '../responsive/Device';
 
 const MediumLabel = styled.h3`
   color: ${({ color }) => color || '#FFFFFF'};
@@ -14,6 +15,15 @@ const MediumLabel = styled.h3`
     text-transform: uppercase;
   }
   `}
+  @media ${device.tablet} {
+    font-size: ${({ fontSize }) => fontSize || '23px'};
+  }
+  @media ${device.laptop} {
+    font-size: ${({ fontSize }) => fontSize || '26px'};
+  } 
+  @media ${device.laptopL} {
+    font-size: ${({ fontSize }) => fontSize || '29px'};
+  }
 `;
 
 export default MediumLabel;

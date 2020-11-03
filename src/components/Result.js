@@ -17,6 +17,7 @@ import BigLabel from './BigLabel';
 import MediumLabel from './MediumLabel';
 import SmallLabel from './SmallLabel';
 import Text from './Text';
+import device from '../responsive/Device';
 
 const Results = styled.div`
   display: flex;
@@ -42,6 +43,14 @@ const CurrentWeatherWrapper = styled.div`
   grid-template-columns: auto 1fr;
   margin: 20px 0;
   grid-gap: 30px;
+  @media ${device.mobileL} {
+    flex-basis: 50%;
+    padding-right: 10px;
+  }
+  @media ${device.tablet} {
+    grid-template-columns: 1fr 1fr;
+    padding-right: 20px;
+  }
 `;
 
 const WeatherIcon = styled.div`
@@ -50,6 +59,16 @@ const WeatherIcon = styled.div`
   align-items: center;
   font-size: 70px;
   color: #ffffff;
+  @media ${device.tablet} {
+    font-size: 100px;
+    justify-content: flex-end;
+  }
+  @media ${device.laptop} {
+    font-size: 120px;
+  }
+  @media ${device.laptopL} {
+    font-size: 140px;
+  }
 `;
 
 const TemperatureWrapper = styled.div``;
@@ -59,6 +78,15 @@ const Temperature = styled.h3`
   font-size: 50px;
   font-weight: 400;
   color: #ffffff;
+  @media ${device.tablet} {
+    font-size: 70px;
+  }
+  @media ${device.laptop} {
+    font-size: 90px;
+  }
+  @media ${device.laptopL} {
+    font-size: 110px;
+  }
 `;
 
 const WeatherDetailsWrapper = styled.div`
@@ -70,11 +98,17 @@ const WeatherDetailsWrapper = styled.div`
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   align-self: flex-start;
+  @media ${device.mobileL} {
+    flex-basis: 50%;
+  }
 `;
 
 const WeatherDetail = styled.div`
   flex-basis: calc(100% / 3);
   padding: 10px;
+  @media ${device.laptop} {
+    padding: 20px 10px;
+  }
 `;
 
 const ForecastWrapper = styled.div`
@@ -92,6 +126,9 @@ const Forecast = styled.div`
   scrollbar-width: thin;
   margin-top: 20px;
   padding-bottom: 20px;
+  @media ${device.laptop} {
+    order: 4;
+  }
 `;
 
 const Result = ({ weather }) => {
